@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/main"
+    android:background="#ECECEC"
+    android:padding="41dp">
+
+    <TextView
+        android:id="@+id/tvSEAGNAL"
+        android:text="SEAGNAL"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+        android:layout_marginTop="0dp"
+        android:gravity="center"/>
+
+    <!-- Rectangle 24 equivalent -->
+
+    <!-- Rectangle 25 equivalent -->
+    <RelativeLayout
+        android:id="@+id/rectangle24"
+        android:layout_width="wrap_content"
+        android:layout_height="285dp"
+        android:layout_below="@+id/tvSEAGNAL"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="24dp">
+
+        <ScrollView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tvHeartRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="심박수" />
+
+        <!-- List items 1 through 7 -->
+        <!-- You can create a ListView or RecyclerView here -->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rectangle25"
+        android:layout_width="wrap_content"
+        android:layout_height="285dp"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/rectangle24"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:elevation="4dp"
+        android:padding="24dp"
+        android:layout_marginBottom="5dp"> <!-- 이 줄을 추가했습니다. -->
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="조난자 위치"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <fragment
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                tools:context=".MapsActivity"/>
+
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
